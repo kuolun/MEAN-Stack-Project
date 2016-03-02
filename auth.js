@@ -64,7 +64,7 @@ function setupAuth(User, app, Config) {
     // handle the callback after facebook has authenticated the user
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
-            successRedirect :'http://localhost:3000/index.html#/category/Books',
+            successRedirect :'https://mean-cart-app.herokuapp.com/index.html#/category/Books',
             failureRedirect: '/fail' }),
         function(req, res) {
             res.send('Welcome, ' + req.user.profile.username);
