@@ -6,6 +6,10 @@ var _ = require('underscore');
 module.exports = function(wagner) {
     var api = express.Router();
 
+
+    //TODO
+    //api.get('/products',function(req,res))--載入所有產品
+
     //取得特定category資料
     //有req到此path時，傳進來的wagner內有Category model，可invoke
     api.get('/category/id/:id', wagner.invoke(function(Category) {

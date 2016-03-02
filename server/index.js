@@ -13,6 +13,9 @@ wagner.invoke(require('./auth'), { app: app });
 
 app.use('/api/v1', require('./api')(wagner));
 
+ 
+
+
 //讓此目錄下的html都可以作為static file
 app.use(express.static('../', { maxAge: 4 * 60 * 60 * 1000 }));
 
