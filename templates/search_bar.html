@@ -1,0 +1,25 @@
+<!--
+TODO: this HTML should expose a search bar
+!-->
+
+<div class="search-bar-wrapper">
+	<!-- 搜尋框 -->
+	<input class="search-bar-input" ng-model="searchText" ng-change="update(searchText)"></input>
+	<!-- 搜尋結果 -->
+	<div class="autocomplete-result" ng-repeat="product in results">
+		<div class="product-image">
+      		<img ng-src="{{product.pictures[0]}}" />
+    	</div>
+
+    	<div class="product-name">
+     		 <a ng-href="#/product/{{product._id}}">{{product.name}}</a>
+    	</div>
+
+    	<div class="product-cost">
+      		{{product.displayPrice}}
+    	</div>
+
+    	<add-to-cart></add-to-cart>
+	</div>
+	<div style="clear: both"></div>
+</div>

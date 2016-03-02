@@ -1,0 +1,38 @@
+<div class="category-tree-wrapper" ng-show="category">
+  <!-- 麵包屑 -->
+  <div class="crumbs">
+    <!-- ancestors -->
+      <div class="crumb" ng-repeat="ancestor in category.ancestors">
+        <a ng-href="#/category/{{ancestor}}">
+        {{ancestor}}
+        </a>
+        <!-- 分隔線，最後一個顯示 -->
+        <div class="divider" ng-hide="$last">
+          /
+        </div>
+      </div>
+
+    <!-- 子目錄 -->
+    <div class="child-categories" ng-show="children && children.length">
+      <div class="divider">
+        /
+      </div>
+      <!-- 下拉選單，預設不顯示，click後把display設為true-->
+      <div  class="child-arrow"
+            ng-init="display = false;"
+            ng-click="display = !display;">
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      
+      <!-- 點選到的目錄，會到分類頁面route -->
+      <div class="child-select" ng-show="display">
+        <div ng-repeat="child in children">
+          <a ng-href="#/category/{{child._id}}">
+            {{child._id}}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

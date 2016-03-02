@@ -1,0 +1,30 @@
+<div class="nav-bar">
+    <div class="nav-bar-contents">
+        <!-- MEAN logo -->
+        <div class="logo">
+            <img src="/mean-retail-logo.png" />
+        </div>
+        <div class="title">
+            MEAN Retail
+        </div>
+        <!-- 使用者資料 -->
+        <div class="user-info">
+            <!-- 購物車圖案 -->
+            <div class="checkout" ng-show="user.user">
+                <a ng-href="#/checkout">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+            </div>
+            <!-- 已login，使用者FB大頭貼 -->
+            <div class="user" ng-show="user.user">
+                <img ng-src="{{user.user.profile.picture}}" />
+            </div>
+            <!-- 如果尚未login，顯示fb login icon -->
+            <div class="login" ng-show="!user.user">
+                <a href="/auth/facebook">
+                    <img src="//i.stack.imgur.com/LKMP7.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
