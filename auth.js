@@ -23,7 +23,7 @@ function setupAuth(User, app, Config) {
             // clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
             // clientSecret: '1a3189da65c3164382fb1fd681ebc26a',
             clientSecret: Config.facebookClientSecret,
-            callbackURL: 'http://localhost:3000/auth/facebook/callback',
+            callbackURL: 'https://mean-cart-app.herokuapp.com/auth/facebook/callback',
             // Necessary for new version of Facebook graph API
             profileFields: ['id', 'emails', 'name']
         },
